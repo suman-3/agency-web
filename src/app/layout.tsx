@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+
 import "./globals.css";
 import { ThemeProvider } from "@/provider/theme-provider";
-import { Lumiflex } from "uvcanvas";
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
+import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={cn(GeistSans.variable, "font-sans overflow-x-hidden")} 
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
