@@ -104,6 +104,23 @@ const config = {
             transform: "translate(calc(-50% - 0.5rem))",
           },
         },
+        "background-shine": {
+          from: {
+            backgroundPosition: "0 0",
+          },
+          to: {
+            backgroundPosition: "-200% 0",
+          },
+        },
+        "border-beam": {
+          "100%": {
+            "offset-distance": "100%",
+          },
+        },
+        flashing: {
+          "0%, 100%": { opacity: "0.2" },
+          "20%": { opacity: "1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -111,7 +128,11 @@ const config = {
         stroke: "stroke 5s linear infinite",
         light: "light 2s ease-in-out infinite",
         updown: "updown 3s ease-in-out infinite",
-        scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite"
+        "background-shine": "background-shine 2s linear infinite",
+        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
+        flashing: "flashing 1.4s infinite linear",
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
     },
   },
@@ -123,7 +144,7 @@ function addVariablesForColors({ addBase, theme }: any) {
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
   );
- 
+
   addBase({
     ":root": newVars,
   });

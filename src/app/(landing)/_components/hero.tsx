@@ -1,23 +1,37 @@
+"use client";
 import { buttonVariants } from "@/components/ui/button";
+import { BorderBeam } from "@/components/uianimation/border-beam";
 import BoxReveal from "@/components/uianimation/box-reveal-animation";
+import { Icons } from "@/components/uianimation/curve-icon";
+import ButtonAnimatedGradient from "@/components/uianimation/gradient-button";
 import { FadeText } from "@/components/uianimation/text-animation";
 import { cn } from "@/lib/utils";
 import { GeistMono } from "geist/font/mono";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 async function Hero() {
   // const user = await currentUser();
 
   return (
     <div className="container relative z-[2] flex flex-col items-center overflow-hidden border-x border-t bg-background px-6 pt-12 text-center md:pt-20">
+      <BorderBeam size={500} duration={10} delay={6} />
       <FadeText
-        className="mb-6 text-4xl font-semibold md:text-6xl bg-gradient-to-b from-black to-gray-700/80 dark:from-white dark:to-slate-400 inline-block text-transparent bg-clip-text tracking-tight"
+        className="mb-6 text-4xl font-semibold md:text-6xl bg-gradient-to-b from-black to-gray-700/80 dark:from-white dark:to-slate-400 inline-block text-transparent bg-clip-text tracking-tight "
         direction="down"
         framerProps={{
           show: { transition: { delay: 0.6 } },
         }}
         text="Providing The Best Services & IT"
       />
+
+      {/* <h1 className="mb-5 lg:mb-10 text-4xl font-semibold md:text-6xl bg-gradient-to-b from-black to-gray-700/80 dark:from-white dark:to-slate-400 inline-block text-transparent bg-clip-text tracking-tight  ">
+        Providing The Best{" "}
+        <span className="relative px-2 bg-gradient-to-b from-black to-gray-700/80 dark:from-white dark:to-slate-400 inline-block text-transparent bg-clip-text tracking-tight">
+          Services & IT
+          <Icons.underline className="hidden sm:block pointer-events-none absolute inset-x-0 -bottom-10 text-black dark:text-white" />
+        </span>
+      </h1> */}
 
       <BoxReveal boxColor={"transparent"} duration={0.5}>
         <p
@@ -34,17 +48,20 @@ async function Hero() {
           future through our virtual internship program today.
         </p>
       </BoxReveal>
-      <div className="inline-flex items-center gap-3">
-        <Link
-          href={"/"}
-          className={cn(
-            buttonVariants({ size: "lg", className: "rounded-full" })
-          )}
-        >
-          Get Started
+      <div className="inline-flex items-center gap-3 z-10">
+        <Link href={"/"}>
+          <motion.p
+            whileHover={{ scale: 1.1 }}
+            className={cn(
+              buttonVariants({ size: "lg", className: "rounded-full" })
+            )}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
+            Get Started
+          </motion.p>
         </Link>
 
-        <a
+        {/* <a
           href="/auth/login"
           className={cn(
             buttonVariants({
@@ -55,7 +72,8 @@ async function Hero() {
           )}
         >
           Log In
-        </a>
+        </a> */}
+        {/* <ButtonAnimatedGradient/> */}
       </div>
       <div
         className="mb-[-150px] mt-16 size-[300px] rounded-full bg-background md:mb-[-250px] md:size-[500px]"
