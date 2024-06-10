@@ -15,7 +15,7 @@ const LandingPage = () => {
         }}
       />
 
-<main className="container mb-[80px] top-[70px] relative max-w-[1100px] px-2 py-4 lg:py-16">
+      <main className="container mb-[80px] top-[70px] relative max-w-[1100px] px-2 py-4 lg:py-16">
         <div
           style={{
             background:
@@ -35,7 +35,6 @@ const LandingPage = () => {
             />
             <Hero />
           </div>
-   
         </div>
       </main>
     </>
