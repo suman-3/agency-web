@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import { ThemeProvider } from "@/provider/theme-provider";
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import { cn } from "@/lib/utils";
-
+import { SmoothScrollProvider } from "@/provider/smooth-scroll-provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,16 +19,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(GeistSans.variable, "font-sans overflow-x-hidden")} 
+      <body
+        className={cn(
+          GeistSans.variable,
+          "font-sans overflow-x-hidden"
+        )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <SmoothScrollProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </SmoothScrollProvider>
       </body>
     </html>
   );
