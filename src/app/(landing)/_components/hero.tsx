@@ -16,22 +16,22 @@ async function Hero() {
   return (
     <div className="container relative z-[2] flex flex-col items-center overflow-hidden border-x border-t bg-background px-6 pt-12 text-center md:pt-20">
       <BorderBeam size={500} duration={10} delay={6} />
-      <FadeText
+      {/* <FadeText
         className="mb-6 text-4xl font-semibold md:text-6xl bg-gradient-to-b from-black to-gray-700/80 dark:from-white dark:to-slate-400 inline-block text-transparent bg-clip-text tracking-tight "
         direction="down"
         framerProps={{
           show: { transition: { delay: 0.6 } },
         }}
         text="Providing The Best Services & IT"
-      />
+      /> */}
 
-      {/* <h1 className="mb-5 lg:mb-10 text-4xl font-semibold md:text-6xl bg-gradient-to-b from-black to-gray-700/80 dark:from-white dark:to-slate-400 inline-block text-transparent bg-clip-text tracking-tight  ">
+      <h1 className="mb-5 lg:mb-10 text-4xl font-semibold md:text-6xl bg-gradient-to-b from-black to-gray-700/80 dark:from-white dark:to-slate-400 inline-block text-transparent bg-clip-text tracking-tight  ">
         Providing The Best{" "}
         <span className="relative px-2 bg-gradient-to-b from-black to-gray-700/80 dark:from-white dark:to-slate-400 inline-block text-transparent bg-clip-text tracking-tight">
           Services & IT
           <Icons.underline className="hidden sm:block pointer-events-none absolute inset-x-0 -bottom-10 text-black dark:text-white" />
         </span>
-      </h1> */}
+      </h1>
 
       <BoxReveal boxColor={"transparent"} duration={0.5}>
         <p
